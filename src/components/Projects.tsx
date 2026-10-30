@@ -187,7 +187,10 @@ function Projects() {
                     loading="lazy"
                     onError={(e) => {
                       e.currentTarget.style.display = "none";
-                      e.currentTarget.nextElementSibling.style.display = "flex";
+                      const fallback = e.currentTarget.nextElementSibling;
+                      if (fallback) {
+                        (fallback as HTMLElement).style.display = "flex";
+                      }
                     }}
                   />
 
